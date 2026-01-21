@@ -19,13 +19,7 @@ const Start = () => {
           }
         }
       })
-      .catch((err) => {
-        if (err.response?.status === 401) {
-          navigate("/");
-        } else {
-          console.error("Unexpected error:", err);
-        }
-      });
+      .catch((err) => console.log(err));
   }, []);
 
   return (
