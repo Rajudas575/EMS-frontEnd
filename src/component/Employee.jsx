@@ -26,7 +26,7 @@ const Employee = () => {
           toast.success(result.data.message);
           setTimeout(() => {
             navigate("/dashboard/employee");
-          }, 1000);
+          }, 500);
         } else {
           toast.error(result.data.error);
         }

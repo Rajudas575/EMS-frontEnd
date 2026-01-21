@@ -43,10 +43,10 @@ const AddEmployee = () => {
     formData.append("image", employee.image);
 
     axios
-      .post("http://localhost:3000/auth/add_employee", formData)
+      .post(`${getEnv("VITE_API_BASE_URL")}/auth/add_employee`, formData)
       .then((result) => {
         if (result.data.status) {
-          toast.success(result.data.message)
+          toast.success(result.data.message);
           navigate("/dashboard/employee");
         } else {
           toast.error(error.message);
@@ -156,7 +156,7 @@ const AddEmployee = () => {
             </select>
           </div>
 
-          <div className="col-12 mb-3">
+          <div className="col-12 mb-3 mt-3">
             <label className="form-label" for="inputGroupFile01">
               Select Image
             </label>

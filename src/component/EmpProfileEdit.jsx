@@ -18,7 +18,7 @@ const EmpProfileEdit = () => {
   useEffect(() => {
     // Fetch employee by id
     axios
-      .get(`http://localhost:3000/employee/detail/${id}`)
+      .get(`${getEnv("VITE_API_BASE_URL")}/employee/detail/${id}`)
       .then((result) => {
         setEmployee(result.data.result);
       })
