@@ -1,0 +1,53 @@
+.loginPage {
+  background: url("images/login-bg.jpeg");
+  background:
+    linear-gradient(rgba(11, 11, 11, 0.5), rgba(10, 10, 10, 0.5)),
+    url("images/login-bg.jpeg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 100% 120%;
+}
+
+.loginForm {
+  background-color: rgba(1, 32, 93, 0.6);
+  color: white;
+}
+
+ul li :hover {
+  background-color: gray;
+}
+
+.user-detail-bg {
+  background-color: #f34672;
+}
+
+.employee_image {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+.emp_det_image {
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+}
+
+.user-attendance {
+  background: #29cfdb;
+}
+.user-leave {
+  background: #e0c02f;
+}
+
+.admin-count{
+  background: #f34672;
+}
+
+.admin-emp{
+  background: #0aa4d3;
+}
+
+.admin-salary{
+  background: #e0c02f;
+}
