@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 import { getEnv } from "../Helpers/getEnv";
 
 const Start = () => {
-  // const navigate = useNavigate();
+  const navigate = useNavigate();
   // const [loading, setLoading] = useState(true);
   // useEffect(() => {
   //   const checkAuth = async () => {
