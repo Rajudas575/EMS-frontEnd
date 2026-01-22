@@ -7,7 +7,7 @@ import { getEnv } from "../Helpers/getEnv";
 const Employee = () => {
   const navigate = useNavigate();
   const [empData, setEmpData] = useState([]);
-  useEffect(() => {
+  const fetchEmployees = () => {
     axios
       .get(`${getEnv("VITE_API_BASE_URL")}/auth/employees`)
       .then((result) => {
@@ -16,6 +16,10 @@ const Employee = () => {
         }
       })
       .catch((err) => console.log(err));
+  };
+
+  useEffect(() => {
+    fetchEmployees();
   }, []);
 
   const handleDelete = (id) => {
@@ -25,7 +29,7 @@ const Employee = () => {
         if (result.data.status) {
           toast.success(result.data.message);
           setTimeout(() => {
-            navigate("/dashboard/employee");
+            setEmpData((prev) => prev.filter((emp) => emp._id !== id));
           }, 500);
         } else {
           toast.error(result.data.error);
