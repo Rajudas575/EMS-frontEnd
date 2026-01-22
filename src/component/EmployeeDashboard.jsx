@@ -1,5 +1,5 @@
 import React from "react";
-import { Link, Outlet, useNavigate } from "react-router-dom";
+import { Link, Outlet, useNavigate, useParams } from "react-router-dom";
 import "bootstrap-icons/font/bootstrap-icons.css";
 import axios from "axios";
 import { toast } from "react-toastify";
@@ -7,6 +7,7 @@ import { getEnv } from "../Helpers/getEnv";
 
 const EmployeeDashboard = () => {
   const navigate = useNavigate();
+  const { id } = useParams();
   axios.defaults.withCredentials = true;
   const handleLogout = () => {
     axios
@@ -37,9 +38,7 @@ const EmployeeDashboard = () => {
               className="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start"
               id="menu">
               <li className="w-100">
-                <Link
-                  to={`/employee-dashboard/${empId}`}
-                  className="nav-link text-white px-0 align-middle">
+                <Link to="" className="nav-link text-white px-0 align-middle">
                   <i className="fs-4 bi-speedometer2 ms-2"></i>
                   <span className="ms-2 d-none d-sm-inline">Dashboard</span>
                 </Link>
