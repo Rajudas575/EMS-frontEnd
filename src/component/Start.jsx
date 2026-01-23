@@ -2,6 +2,7 @@ import axios from "axios";
 import React, { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { getEnv } from "../Helpers/getEnv";
+import "./style.css";
 
 const Start = () => {
   const navigate = useNavigate();

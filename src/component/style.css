@@ -1,11 +1,13 @@
 .loginPage {
-  background: url("images/login-bg.jpeg");
+  min-height: 100vh;
+
   background:
     linear-gradient(rgba(11, 11, 11, 0.5), rgba(10, 10, 10, 0.5)),
-    url("images/login-bg.jpeg");
+    url("/images/login-bg.jpeg");
+
   background-position: center;
   background-repeat: no-repeat;
-  background-size: 100% 120%;
+  background-size: cover;
 }
 
 .loginForm {
@@ -40,18 +42,18 @@ ul li :hover {
   background: #e0c02f;
 }
 
-.admin-count{
+.admin-count {
   background: #f34672;
 }
 
-.admin-emp{
+.admin-emp {
   background: #0aa4d3;
 }
 
-.admin-salary{
+.admin-salary {
   background: #e0c02f;
 }
 
-.text-shadow{
+.text-shadow {
   text-shadow: 1px 1px 2px #000000;
 }
