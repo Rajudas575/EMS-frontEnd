@@ -12,7 +12,6 @@ const EditEmployee = () => {
   const [employee, setEmployee] = useState({
     name: "",
     email: "",
-    salary: "",
     address: "",
     category_id: "",
   });
@@ -42,7 +41,6 @@ const EditEmployee = () => {
           name: emp.name || "",
           email: emp.email || "",
           address: emp.address || "",
-          salary: emp.salary || "",
           category_id: emp.category_id?._id || emp.category_id || "",
         });
       })
@@ -100,21 +98,7 @@ const EditEmployee = () => {
               }
             />
           </div>
-          <div className="col-12">
-            <label htmlFor="inputSalary" className="form-label">
-              Salary
-            </label>
-            <input
-              type="text"
-              className="form-control rounded-0"
-              id="inputSalary"
-              value={employee.salary}
-              autoComplete="off"
-              onChange={(e) =>
-                setEmployee({ ...employee, salary: e.target.value })
-              }
-            />
-          </div>
+
           <div className="col-12">
             <label htmlFor="inputAddress" className="form-label">
               Address

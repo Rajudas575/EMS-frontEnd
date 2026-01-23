@@ -5,22 +5,22 @@ import { getEnv } from "../Helpers/getEnv";
 
 const Start = () => {
   const navigate = useNavigate();
-  useEffect(() => {
-    axios
-      .get(`http://localhost:3000/verify`, {
-        withCredentials: true,
-      })
-      .then((result) => {
-        if (result.data.status) {
-          if (result.data.role === "admin") {
-            navigate("/dashboard");
-          } else {
-            navigate(`/employee-dashboard/${result.data.id}`);
-          }
-        }
-      })
-      .catch((err) => console.log(err));
-  }, []);
+  // useEffect(() => {
+  //   axios
+  //     .get(`http://localhost:3000/verify`, {
+  //       withCredentials: true,
+  //     })
+  //     .then((result) => {
+  //       if (result.data.status) {
+  //         if (result.data.role === "admin") {
+  //           navigate("/dashboard");
+  //         } else {
+  //           navigate(`/employee-dashboard/${result.data.id}`);
+  //         }
+  //       }
+  //     })
+  //     .catch((err) => console.log(err));
+  // }, []);
 
   return (
     <div className="d-flex justify-content-center align-items-center vh-100 loginPage">
