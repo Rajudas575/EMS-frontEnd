@@ -15,7 +15,6 @@ const Profile = () => {
     axios
       .get(`${getEnv("VITE_API_BASE_URL")}/auth/admin_detail`)
       .then((result) => {
-        console.log(result.data.result);
         if (result.data.status) {
           setAdminDetails(result.data.result);
         } else {

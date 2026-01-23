@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./style.css";
 import axios from "axios";
-import { useNavigate } from "react-router-dom";
+import { Navigate, useNavigate } from "react-router-dom";
 import { getEnv } from "../Helpers/getEnv";
 
 const Login = () => {

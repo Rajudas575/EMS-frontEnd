@@ -14,11 +14,19 @@ import "react-toastify/dist/ReactToastify.css";
 import Start from "./component/Start";
 import EmployeeLogin from "./component/EmployeeLogin";
 import EmployeeDetail from "./component/EmployeeDetail";
-import EmployeeDashboard from "./component/EmployeeDashboard";
-import EmployeeHome from "./component/EmployeeHome";
-import EmpProfile from "./component/EmpProfile";
+import EmployeeDashboard from "./component/employees/EmployeeDashboard";
+import EmployeeHome from "./component/employees/EmployeeHome";
+import EmpProfile from "./component/employees/EmpProfile";
 import AdminEdit from "./component/AdminEdit";
-import EmpProfileEdit from "./component/EmpProfileEdit";
+import EmpProfileEdit from "./component/employees/EmpProfileEdit";
+import MyAttendance from "./component/employees/MyAttendance";
+import Payslip from "./component/employees/Payslip";
+import AdminLeaves from "./component/AdminLeaves";
+import AdminPayroll from "./component/AdminPayroll";
+import SetSalary from "./component/SetSalary";
+import MyLeaves from "./component/employees/MyLeaves";
+import ApplyLeave from "./component/employees/ApplyLeave";
+import AdminLeaveApproval from "./component/AdminLeaveApproval";
 
 function App() {
   return (
@@ -29,15 +37,25 @@ function App() {
         <Route path="/adminlogin" element={<Login />} />
         <Route path="/employee_login" element={<EmployeeLogin />} />
         <Route path="/employee-dashboard/:id" element={<EmployeeDashboard />}>
-          <Route index element={<EmployeeHome />} />
+          <Route path="" element={<EmployeeHome />} />
           <Route path="profile" element={<EmpProfile />} />
           <Route path="update_emp_profile" element={<EmpProfileEdit />} />
+          <Route path="my_attendance" element={<MyAttendance />} />
+          <Route path="my_payslip" element={<Payslip />} />
+          <Route path="view_leave" element={<MyLeaves />} />
+          <Route path="leave_apply" element={<ApplyLeave />} />
         </Route>
         <Route path="/dashboard" element={<Dashboard />}>
           <Route path="" element={<Home />}></Route>
           <Route path="/dashboard/employee" element={<Employee />}></Route>
           <Route path="/dashboard/category" element={<Category />}></Route>
           <Route path="/dashboard/profile" element={<Profile />}></Route>
+          <Route path="/dashboard/leave" element={<AdminLeaves />}></Route>
+          <Route path="/dashboard/payroll" element={<AdminPayroll />}></Route>
+          <Route path="/dashboard/leave_approval" element={<AdminLeaveApproval />}></Route>
+          <Route
+            path="/dashboard/set_salary/:userId"
+            element={<SetSalary />}></Route>
           <Route
             path="/dashboard/edit_admin/:id"
             element={<AdminEdit />}></Route>

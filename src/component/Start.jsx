@@ -1,40 +1,26 @@
 import axios from "axios";
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { getEnv } from "../Helpers/getEnv";
-import "./style.css";
 
 const Start = () => {
   const navigate = useNavigate();
-  // const [loading, setLoading] = useState(true);
-  // useEffect(() => {
-  //   const checkAuth = async () => {
-  //     try {
-  //       const res = await axios.get(`${getEnv("VITE_API_BASE_URL")}/verify`, {
-  //         withCredentials: true,
-  //       });
-
-  //       if (res.data.status) {
-  //         if (res.data.role === "admin") {
-  //           navigate("/dashboard", { replace: true });
-  //         } else {
-  //           navigate(`/employee-dashboard/${res.data.id}`, {
-  //             replace: true,
-  //           });
-  //         }
-  //       } else {
-  //         navigate("/", { replace: true });
-  //       }
-  //     } catch (err) {
-  //       // 401 or any error → go to login/home
-  //       navigate("/", { replace: true });
-  //     } finally {
-  //       setLoading(false);
-  //     }
-  //   };
-
-  //   checkAuth();
-  // }, [navigate]);
+  useEffect(() => {
+    axios
+      .get(`http://localhost:3000/verify`, {
+        withCredentials: true,
+      })
+      .then((result) => {
+        if (result.data.status) {
+          if (result.data.role === "admin") {
+            navigate("/dashboard");
+          } else {
+            navigate(`/employee-dashboard/${result.data.id}`);
+          }
+        }
+      })
+      .catch((err) => console.log(err));
+  }, []);
 
   return (
     <div className="d-flex justify-content-center align-items-center vh-100 loginPage">
