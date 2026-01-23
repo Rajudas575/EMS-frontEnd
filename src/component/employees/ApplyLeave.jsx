@@ -22,7 +22,7 @@ const ApplyLeave = () => {
         ...form,
         userId,
       });
-      navigate("view_leave");
+      navigate("../view_leave");
       toast.success("Leave applied successfully");
       setForm({ fromDate: "", toDate: "", leaveType: "PL", reason: "" });
     } catch (err) {
