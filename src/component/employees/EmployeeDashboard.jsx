@@ -8,6 +8,8 @@ import { getEnv } from "../../Helpers/getEnv";
 const EmployeeDashboard = () => {
   const navigate = useNavigate();
   const { id } = useParams();
+  const user = JSON.parse(localStorage.getItem("user"));
+  console.log(user);
   axios.defaults.withCredentials = true;
   const handleLogout = () => {
     axios
@@ -39,7 +41,7 @@ const EmployeeDashboard = () => {
               id="menu">
               <li className="w-100">
                 <Link
-                  to="employee-dashboard"
+                  to={`/employee-dashboard/${user._id}`}
                   className="nav-link text-white px-0 align-middle">
                   <i className="fs-4 bi-speedometer2 ms-2"></i>
                   <span className="ms-2 d-none d-sm-inline">Dashboard</span>
