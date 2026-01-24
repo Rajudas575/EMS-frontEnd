@@ -39,7 +39,7 @@ const EmployeeDashboard = () => {
               className="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start"
               id="menu">
               <li className="w-100">
-                <Link to="/" className="nav-link text-white px-0 align-middle">
+                <Link to="" className="nav-link text-white px-0 align-middle">
                   <i className="fs-4 bi-speedometer2 ms-2"></i>
                   <span className="ms-2 d-none d-sm-inline">Dashboard</span>
                 </Link>
