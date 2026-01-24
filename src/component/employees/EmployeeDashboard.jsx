@@ -9,7 +9,7 @@ const EmployeeDashboard = () => {
   const navigate = useNavigate();
   const { id } = useParams();
   const user = JSON.parse(localStorage.getItem("user"));
-  console.log(user._id);
+  console.log(user);
   axios.defaults.withCredentials = true;
   const handleLogout = () => {
     axios
