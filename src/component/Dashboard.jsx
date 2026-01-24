@@ -72,16 +72,16 @@ const Dashboard = () => {
                 </Link>
               </li>
 
-              <li className="w-100">
+              {/* <li className="w-100">
                 <Link
                   to="/dashboard/set_salary"
                   className="nav-link px-0 align-middle text-white">
                   <i className="bi bi-cash-stack ms-2"></i>
                   <span className="ms-2 d-none d-sm-inline">Manage Salary</span>
                 </Link>
-              </li>
+              </li> */}
 
-              <li className="w-100">
+              {/* <li className="w-100">
                 <Link
                   to="/dashboard/payroll"
                   className="nav-link px-0 align-middle text-white">
@@ -90,14 +90,16 @@ const Dashboard = () => {
                     Manage Payroll
                   </span>
                 </Link>
-              </li>
+              </li> */}
 
               <li className="w-100">
                 <Link
                   to="/dashboard/leave_approval"
                   className="nav-link px-0 align-middle text-white">
                   <i className="bi-stickies ms-2"></i>
-                  <span className="ms-2 d-none d-sm-inline">Leave Approval</span>
+                  <span className="ms-2 d-none d-sm-inline">
+                    Leave Approval
+                  </span>
                 </Link>
               </li>
 

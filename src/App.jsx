@@ -27,6 +27,8 @@ import SetSalary from "./component/SetSalary";
 import MyLeaves from "./component/employees/MyLeaves";
 import ApplyLeave from "./component/employees/ApplyLeave";
 import AdminLeaveApproval from "./component/AdminLeaveApproval";
+import LeaveBalanceCard from "./component/employees/LeaveBalanceCard";
+import AssignLeave from "./component/AssignLeave";
 
 function App() {
   return (
@@ -44,6 +46,7 @@ function App() {
           <Route path="my_payslip" element={<Payslip />} />
           <Route path="view_leave" element={<MyLeaves />} />
           <Route path="leave_apply" element={<ApplyLeave />} />
+          <Route path="leave_balance" element={<LeaveBalanceCard />} />
         </Route>
         <Route path="/dashboard" element={<Dashboard />}>
           <Route path="" element={<Home />}></Route>
@@ -52,7 +55,12 @@ function App() {
           <Route path="/dashboard/profile" element={<Profile />}></Route>
           <Route path="/dashboard/leave" element={<AdminLeaves />}></Route>
           <Route path="/dashboard/payroll" element={<AdminPayroll />}></Route>
-          <Route path="/dashboard/leave_approval" element={<AdminLeaveApproval />}></Route>
+          <Route
+            path="/dashboard/assign-leave/:id"
+            element={<AssignLeave />}></Route>
+          <Route
+            path="/dashboard/leave_approval"
+            element={<AdminLeaveApproval />}></Route>
           <Route
             path="/dashboard/set_salary/:userId"
             element={<SetSalary />}></Route>

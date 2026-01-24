@@ -67,7 +67,7 @@ const EmployeeHome = () => {
               </span>
             </h5>
             {/* <h5>Half Days: {attendanceSummary?.halfDays ?? 0}</h5> */}
-            <h5>Absent Days: {attendanceSummary?.absentDays ?? 0}</h5>
+            {/* <h5>Absent Days: {attendanceSummary?.absentDays ?? 0}</h5> */}
             {/* <h5>Working Days: {attendanceSummary?.workingDays ?? 0}</h5> */}
           </div>
         </div>
@@ -76,15 +76,17 @@ const EmployeeHome = () => {
             <h4>Leave Details </h4>
           </div>
           <hr />
-          <div className="mb-3">
-            <Link to={"view_leave"} className="btn btn-light text-dark btn-sm me-2">
+          <div className="d-flex justify-content-between text-white">
+            <Link
+              to={"view_leave"}
+              className="btn btn-light text-dark btn-sm me-2">
               Leave Status
             </Link>
-          </div>
-          <div className="d-flex justify-content-between text-white">
-            <h5>Total 35</h5>
-            <h5>Taken 10 </h5>
-            <h5>Remain 25 </h5>
+            <Link
+              to={"leave_balance"}
+              className="btn btn-light text-dark btn-sm me-2">
+              Leave Balance
+            </Link>
           </div>
         </div>
       </div>

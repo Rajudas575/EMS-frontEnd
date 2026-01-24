@@ -54,6 +54,7 @@ const Employee = () => {
                 <th>Category</th>
                 <th>Image</th>
                 <th>Set Salary</th>
+                <th>Set Leave</th>
                 <th>Action</th>
               </tr>
             </thead>
@@ -84,6 +85,13 @@ const Employee = () => {
                       to={`/dashboard/set_salary/${e._id}`}
                       className="btn btn-warning btn-sm">
                       Set Salary
+                    </Link>
+                  </td>
+                  <td>
+                    <Link
+                      to={`/dashboard/assign-leave/${e._id}`}
+                      className="btn btn-warning btn-sm">
+                      Set Leave
                     </Link>
                   </td>
                   <td>

@@ -39,9 +39,7 @@ const EmployeeDashboard = () => {
               className="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start"
               id="menu">
               <li className="w-100">
-                <Link
-                  to={`/employee-dashboard/${id}`}
-                  className="nav-link text-white px-0 align-middle">
+                <Link to="/" className="nav-link text-white px-0 align-middle">
                   <i className="fs-4 bi-speedometer2 ms-2"></i>
                   <span className="ms-2 d-none d-sm-inline">Dashboard</span>
                 </Link>
@@ -73,6 +71,14 @@ const EmployeeDashboard = () => {
                   <span className="ms-2 d-none d-sm-inline">Leave Status</span>
                 </Link>
               </li>
+              <li className="w-100">
+                <Link
+                  to="leave_balance"
+                  className="nav-link px-0 align-middle text-white">
+                  <i className="bi bi-valentine ms-2"></i>
+                  <span className="ms-2 d-none d-sm-inline">Leave Balance</span>
+                </Link>
+              </li>
 
               <li className="w-100">
                 <Link
@@ -83,14 +89,14 @@ const EmployeeDashboard = () => {
                 </Link>
               </li>
 
-              <li className="w-100">
+              {/* <li className="w-100">
                 <Link
                   to="my_payslip"
                   className="nav-link px-0 align-middle text-white">
                   <i className="bi bi-cash-stack ms-2"></i>
                   <span className="ms-2 d-none d-sm-inline">Payslip</span>
                 </Link>
-              </li>
+              </li> */}
 
               <li className="w-100" onClick={handleLogout}>
                 <Link className="nav-link px-0 align-middle text-white">
