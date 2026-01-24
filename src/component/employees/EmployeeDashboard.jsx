@@ -8,7 +8,7 @@ import { getEnv } from "../../Helpers/getEnv";
 const EmployeeDashboard = () => {
   const navigate = useNavigate();
   const { id } = useParams();
-
+  console.log(id);
   axios.defaults.withCredentials = true;
   const handleLogout = () => {
     axios
