@@ -136,11 +136,15 @@ const Dashboard = () => {
         </div>
         <div className="col p-0 m-0">
           <div className="p-2 d-flex justify-content-center shadow">
+<<<<<<< HEAD
             <img
               src={logo}
               style={{ width: "35px", height: "35px", paddingTop: "0px" }}
             />
             <h3 style={{ color: "#f34672" }}>EMS</h3>
+=======
+            <h4>Employee Management System</h4>
+>>>>>>> a813688a623d3cb1917c02e1769fee4a6013861d
           </div>
           <Outlet />
         </div>
