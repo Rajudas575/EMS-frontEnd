@@ -9,9 +9,7 @@ const Category = () => {
   useEffect(() => {
     axios
       .get(`${getEnv("VITE_API_BASE_URL")}/auth/category`, {
-        headers: {
-          Authorization: `Bearer ${localStorage.getItem("token")}`,
-        },
+        withCredentials: true,
       })
       .then((result) => {
         if (result.data.status) {

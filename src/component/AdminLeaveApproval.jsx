@@ -12,7 +12,7 @@ const AdminLeaveApproval = () => {
         headers: {
           Authorization: `Bearer ${localStorage.getItem("token")}`,
         },
-      }
+      },
     );
     setLeaves(res.data.result);
   };
@@ -24,11 +24,10 @@ const AdminLeaveApproval = () => {
   const handleAction = async (leaveId, action) => {
     try {
       await axios.put(
-        `${getEnv("VITE_API_BASE_URL")}/auth/leave/${action}/${leaveId}`,{
-        headers: {
-          Authorization: `Bearer ${localStorage.getItem("token")}`,
+        `${getEnv("VITE_API_BASE_URL")}/auth/leave/${action}/${leaveId}`,
+        {
+          withCredentials: true,
         },
-      }
       );
       alert(`Leave ${action}ed`);
       fetchLeaves(); // refresh

@@ -23,9 +23,7 @@ const Employee = () => {
   const handleDelete = (id) => {
     axios
       .delete(`${getEnv("VITE_API_BASE_URL")}/auth/delete_employee/${id}`, {
-        headers: {
-          Authorization: `Bearer ${localStorage.getItem("token")}`,
-        },
+        withCredentials: true,
       })
       .then((result) => {
         if (result.data.status) {
