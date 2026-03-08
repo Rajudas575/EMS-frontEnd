@@ -8,7 +8,11 @@ const Category = () => {
 
   useEffect(() => {
     axios
-      .get(`${getEnv("VITE_API_BASE_URL")}/auth/category`)
+      .get(`${getEnv("VITE_API_BASE_URL")}/auth/category`, {
+        headers: {
+          Authorization: `Bearer ${localStorage.getItem("token")}`,
+        },
+      })
       .then((result) => {
         if (result.data.status) {
           setCategory(result.data.result);

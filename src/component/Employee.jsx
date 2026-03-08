@@ -9,7 +9,9 @@ const Employee = () => {
   const [empData, setEmpData] = useState([]);
   useEffect(() => {
     axios
-      .get(`${getEnv("VITE_API_BASE_URL")}/auth/employees`)
+      .get(`${getEnv("VITE_API_BASE_URL")}/auth/employees`, {
+        withCredentials: true,
+      })
       .then((result) => {
         if (result.data.status) {
           setEmpData(result.data.result);
@@ -20,7 +22,11 @@ const Employee = () => {
 
   const handleDelete = (id) => {
     axios
-      .delete(`${getEnv("VITE_API_BASE_URL")}/auth/delete_employee/${id}`)
+      .delete(`${getEnv("VITE_API_BASE_URL")}/auth/delete_employee/${id}`, {
+        headers: {
+          Authorization: `Bearer ${localStorage.getItem("token")}`,
+        },
+      })
       .then((result) => {
         if (result.data.status) {
           toast.success(result.data.message);
