@@ -4,6 +4,7 @@ import "bootstrap-icons/font/bootstrap-icons.css";
 import axios from "axios";
 import { toast } from "react-toastify";
 import { getEnv } from "../Helpers/getEnv";
+import logo from "../../public/logo.png";
 
 const Dashboard = () => {
   const navigate = useNavigate();
@@ -30,7 +31,8 @@ const Dashboard = () => {
               to="/dashboard"
               className="d-flex align-items-center pb-3 mb-md-1 mt-md-3 me-md-auto text-white text-decoration-none">
               <span className="fs-5 fw-bolder d-none d-sm-inline">
-                Code With Me
+                <img src={logo} style={{ width: "33px" }} />
+                EMS
               </span>
             </Link>
             <ul
@@ -63,14 +65,14 @@ const Dashboard = () => {
                 </Link>
               </li>
 
-              <li className="w-100">
+              {/* <li className="w-100">
                 <Link
                   to="/dashboard/profile"
                   className="nav-link px-0 align-middle text-white">
                   <i className="fs-4 bi-person ms-2"></i>
                   <span className="ms-2 d-none d-sm-inline">Profile</span>
                 </Link>
-              </li>
+              </li> */}
 
               {/* <li className="w-100">
                 <Link
@@ -81,7 +83,18 @@ const Dashboard = () => {
                 </Link>
               </li> */}
 
-              {/* <li className="w-100">
+              <li className="w-100">
+                <Link
+                  to="/dashboard/calendar"
+                  className="nav-link px-0 align-middle text-white">
+                  <i className="bi bi-calendar-check ms-2"></i>
+                  <span className="ms-2 d-none d-sm-inline">
+                    Manage Calendar
+                  </span>
+                </Link>
+              </li>
+
+              <li className="w-100">
                 <Link
                   to="/dashboard/payroll"
                   className="nav-link px-0 align-middle text-white">
@@ -90,7 +103,7 @@ const Dashboard = () => {
                     Manage Payroll
                   </span>
                 </Link>
-              </li> */}
+              </li>
 
               <li className="w-100">
                 <Link
@@ -123,7 +136,11 @@ const Dashboard = () => {
         </div>
         <div className="col p-0 m-0">
           <div className="p-2 d-flex justify-content-center shadow">
-            <h4>Emoployee Management System</h4>
+            <img
+              src={logo}
+              style={{ width: "35px", height: "35px", paddingTop: "0px" }}
+            />
+            <h3 style={{ color: "#f34672" }}>EMS</h3>
           </div>
           <Outlet />
         </div>

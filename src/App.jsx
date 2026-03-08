@@ -29,6 +29,7 @@ import ApplyLeave from "./component/employees/ApplyLeave";
 import AdminLeaveApproval from "./component/AdminLeaveApproval";
 import LeaveBalanceCard from "./component/employees/LeaveBalanceCard";
 import AssignLeave from "./component/AssignLeave";
+import AdminCalendar from "./component/AdminCalendar";
 
 function App() {
   return (
@@ -53,6 +54,7 @@ function App() {
           <Route path="/dashboard/employee" element={<Employee />}></Route>
           <Route path="/dashboard/category" element={<Category />}></Route>
           <Route path="/dashboard/profile" element={<Profile />}></Route>
+          <Route path="/dashboard/calendar" element={<AdminCalendar />}></Route>
           <Route path="/dashboard/leave" element={<AdminLeaves />}></Route>
           <Route path="/dashboard/payroll" element={<AdminPayroll />}></Route>
           <Route

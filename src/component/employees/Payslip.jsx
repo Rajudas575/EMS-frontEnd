@@ -45,14 +45,14 @@ const Payslip = () => {
         <p>Basic Salary: ₹{payroll.basicSalary}</p>
         <p>HRA: ₹{payroll.hra}</p>
         <p>Allowance: ₹{payroll.allowance}</p>
-        <p>Deductions: ₹{payroll.deductions}</p>
+        <p>Deductions: ₹{payroll.lopDeduction + payroll.professionalTax}</p>
 
         <hr />
 
         <h5 className="text-success">Net Pay: ₹{payroll.netSalary}</h5>
 
         <a
-          href={`${getEnv("VITE_API_BASE_URL")}/employee/payroll/download/${payroll._id}`}
+          href={`${getEnv("VITE_API_BASE_URL")}/employee/payslip/${month}/${year}/download`}
           className="btn btn-primary mt-3">
           Download Payslip
         </a>

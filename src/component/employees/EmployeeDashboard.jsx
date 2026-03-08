@@ -1,4 +1,4 @@
-import React from "react";
+import logo from "../../../public/logo.png";
 import { Link, Outlet, useNavigate, useParams } from "react-router-dom";
 import "bootstrap-icons/font/bootstrap-icons.css";
 import axios from "axios";
@@ -8,6 +8,7 @@ import { getEnv } from "../../Helpers/getEnv";
 const EmployeeDashboard = () => {
   const navigate = useNavigate();
   const { id } = useParams();
+
   axios.defaults.withCredentials = true;
   const handleLogout = () => {
     axios
@@ -31,16 +32,17 @@ const EmployeeDashboard = () => {
               to=""
               className="d-flex align-items-center pb-3 mb-md-1 mt-md-3 me-md-auto text-white text-decoration-none">
               <span className="fs-5 fw-bolder d-none d-sm-inline">
-                Code With Me
+                <h2 style={{ color: "#f34672" }}>
+                  <img src={logo} style={{ width: "33px" }} />
+                  EMS
+                </h2>
               </span>
             </Link>
             <ul
               className="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start"
               id="menu">
               <li className="w-100">
-                <Link
-                  to={`/employee-dashboard/${id}`}
-                  className="nav-link text-white px-0 align-middle">
+                <Link to="/" className="nav-link text-white px-0 align-middle">
                   <i className="fs-4 bi-speedometer2 ms-2"></i>
                   <span className="ms-2 d-none d-sm-inline">Dashboard</span>
                 </Link>
@@ -90,14 +92,14 @@ const EmployeeDashboard = () => {
                 </Link>
               </li>
 
-              {/* <li className="w-100">
+              <li className="w-100">
                 <Link
                   to="my_payslip"
                   className="nav-link px-0 align-middle text-white">
                   <i className="bi bi-cash-stack ms-2"></i>
                   <span className="ms-2 d-none d-sm-inline">Payslip</span>
                 </Link>
-              </li> */}
+              </li>
 
               <li className="w-100" onClick={handleLogout}>
                 <Link className="nav-link px-0 align-middle text-white">
@@ -110,7 +112,11 @@ const EmployeeDashboard = () => {
         </div>
         <div className="col p-0 m-0">
           <div className="p-2 d-flex justify-content-center shadow">
-            <h4>Emoployee Management System</h4>
+            <img
+              src={logo}
+              style={{ width: "35px", height: "35px", paddingTop: "0px" }}
+            />
+            <h3 style={{ color: "#f34672" }}>EMS</h3>
           </div>
           <Outlet />
         </div>

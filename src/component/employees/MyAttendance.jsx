@@ -9,22 +9,30 @@ const MyAttendance = () => {
 
   useEffect(() => {
     axios
-      .get(`${getEnv("VITE_API_BASE_URL")}/employee/getAtendanc/${userId}`)
+      .get(`${getEnv("VITE_API_BASE_URL")}/employee/getAtendance/${userId}`)
       .then((res) => {
         setAttendance(res.data);
       })
       .catch((err) => console.log(err));
   }, [userId]);
 
+  const config = {
+    headers: {
+      Authorization: `Bearer ${localStorage.getItem("token")}`,
+    },
+  };
+
   const checkIn = async () => {
     try {
       const res = await axios.post(
         `${getEnv("VITE_API_BASE_URL")}/employee/checkin/${userId}`,
+        {},
+        config,
       );
       setAttendance(res.data.attendance);
       alert(res.data.message);
     } catch (err) {
-      alert(err.response.data.message);
+      alert(err.response?.data?.message || "Check-in failed");
     }
   };
 
@@ -32,11 +40,13 @@ const MyAttendance = () => {
     try {
       const res = await axios.post(
         `${getEnv("VITE_API_BASE_URL")}/employee/checkout/${userId}`,
+        {},
+        config,
       );
       setAttendance(res.data.attendance);
       alert(res.data.message);
     } catch (err) {
-      alert(err.response.data.message);
+      alert(err.response?.data?.message || "Check-out failed");
     }
   };
 
@@ -80,7 +90,20 @@ const MyAttendance = () => {
                   </tr>
                 </tbody>
               </table>
-              <hr/>
+              <hr />
+              <p>
+                Status:{" "}
+                <span
+                  className={`badge ${
+                    attendance.status === "Present"
+                      ? "bg-success"
+                      : attendance.status === "Half-day"
+                        ? "bg-warning"
+                        : "bg-danger"
+                  }`}>
+                  {attendance.status}
+                </span>
+              </p>
             </div>
           </div>
         </div>
