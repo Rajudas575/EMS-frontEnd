@@ -7,7 +7,7 @@ const Start = () => {
   const navigate = useNavigate();
   useEffect(() => {
     axios
-      .get(`http://localhost:3000/verify`, {
+      .get(`${getEnv("VITE_API_URL")}/verify`, {
         withCredentials: true,
       })
       .then((result) => {
